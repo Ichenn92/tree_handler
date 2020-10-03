@@ -20,9 +20,13 @@ module TreeHandler
     end
 
     def insert(value)
-      @data.push(value)
-      node = Node.new(value)
-      compare(root, node)
+      unless @data.include? value
+        @data.push(value)
+        node = Node.new(value)
+        compare(root, node)
+      else
+        raise "The same value can't be inserted twice"
+      end
     end
 
     def delete(value, parent_pointer = @root)
