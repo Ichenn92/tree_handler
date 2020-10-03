@@ -29,42 +29,36 @@ start by creating a new tree
 
 ```ruby
 my_object = TreeHandler.new(array)
-# Parameter 
-	#	an array of integer (duplicate value won't raise error, they are automatically removed)
-# RETURN 
-	#	the full object with each node
+# @params : an array of integer (duplicate value won't raise error, they are automatically removed)
+# return : the full object with each node
 ```
+
+
 You can then modify by inserting or deleting some nodes by value
 
 ```ruby
 my_object.insert(value)
-# Parameter 
-	#	an integer (an existing value will raise an error)
-# RETURN 
-	#	The created node or RuntimeError (The same value can't be inserted twice) if value exists already
+# @params : an integer (an existing value will raise an error)
+# return : The created node or RuntimeError (The same value can't be inserted twice) if value exists already
 ```
 ```ruby
 my_object.delete(value, parent_pointer = @root)
-# Parameter 
-	#1	an integer
-	#2	the node where the search will start. Default value : root of the tree
-# RETURN 
-	#	The deleted node or nil of value not found
+# @params1 : an integer
+# @params2 : the node where the search will start. Default value : root of the tree
+# return : The deleted node or nil of value not found
 ```
 To check if the tree is balanced (same depth on each child of the root), simply :
 
 ```ruby
 my_object.balanced?
-# RETURN 
-	#	true if balanced
+# return : true if balanced
 ```
 
 To rebalance the tree, type :
 
 ```ruby
 my_object.rebalance!
-# RETURN 
-	#	the full object with each node
+# return : the full object with each node
 ```
 ### Navigation methods
 
